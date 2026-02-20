@@ -1,0 +1,41 @@
+azure-landing-zone-terraform/
+├── main.tf                      # Root module — calls all child modules
+├── variables.tf                 # Root-level variables
+├── outputs.tf                   # Root-level outputs
+├── providers.tf                 # Azure provider configuration
+├── terraform.tfvars             # Variable values
+├── backend.tf                   # Remote state configuration
+├── .gitignore                   # Git ignore file
+├── README.md                    # Project overview
+├── modules/
+│   ├── management-groups/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── hub-network/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── spoke-network/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── policy-assignments/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── monitoring/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+├── environments/
+│   └── (future: separate tfvars per environment)
+├── docs/
+│   ├── architecture-decision-record.md
+│   ├── network-design.md
+│   ├── governance-policies.md
+│   ├── runbooks/
+│   │   ├── onboarding-new-spoke.md
+│   │   └── incident-response.md
+│   └── diagrams/
+│       └── (architecture diagrams)
