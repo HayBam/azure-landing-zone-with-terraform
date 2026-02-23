@@ -1,3 +1,9 @@
+variable "subscription_id" {
+  description = "The subscription ID to associate with the root management group and deploy resources into"
+  type        = string
+  sensitive   = true
+}
+
 variable "location" {
   description = "Primary Azure region for all resources"
   type        = string
