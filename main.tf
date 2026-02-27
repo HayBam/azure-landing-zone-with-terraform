@@ -70,3 +70,16 @@ module "prod_spoke" {
 
   depends_on = [azurerm_management_group_subscription_association.root]
 }
+
+# -----------------------------------------------
+# Azure Policy Assignments
+# -----------------------------------------------
+module "policy_assignments" {
+  source              = "./modules/policy-assignments"
+  root_mg_id          = module.management_groups.root_mg_id
+  landing_zones_mg_id = module.management_groups.landing_zones_mg_id
+  prod_mg_id          = module.management_groups.lz_prod_mg_id
+  allowed_locations   = ["canadacentral", "canadaeast"]
+
+  depends_on = [azurerm_management_group_subscription_association.root]
+}
