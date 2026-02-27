@@ -83,3 +83,15 @@ module "policy_assignments" {
 
   depends_on = [azurerm_management_group_subscription_association.root]
 }
+
+# -----------------------------------------------
+# Centralized Monitoring
+# -----------------------------------------------
+module "monitoring" {
+  source              = "./modules/monitoring"
+  resource_group_name = "rg-platform-monitoring"
+  location            = var.location
+  tags                = var.tags
+
+  depends_on = [azurerm_management_group_subscription_association.root]
+}
